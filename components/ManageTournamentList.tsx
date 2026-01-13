@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Tournament } from '../types';
 import BrutalistButton from './BrutalistButton';
@@ -47,12 +46,13 @@ const ManageTournamentList: React.FC<ManageTournamentListProps> = ({ tournaments
             <tbody className="divide-y-2 divide-black">
               {tournaments.length > 0 ? tournaments.map((t, idx) => {
                 const completed = t.matches.filter(m => m.status === 'COMPLETED').length;
-                const status: any = completed === 0 ? 'Upcoming' : (completed === t.matches.length ? 'Completed' : 'Ongoing');
                 const statusColors = {
                   Upcoming: 'bg-gray-100 text-gray-400',
                   Ongoing: 'bg-sky-100 text-sky-600',
                   Completed: 'bg-emerald-100 text-emerald-600'
                 };
+                
+                const status: keyof typeof statusColors = completed === 0 ? 'Upcoming' : (completed === t.matches.length ? 'Completed' : 'Ongoing');
 
                 return (
                   <tr 

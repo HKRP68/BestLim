@@ -553,7 +553,7 @@ const TournamentWorkspace: React.FC<TournamentWorkspaceProps> = ({ tournament, o
                 const t2Earned = t2Win ? pointsConfig.win : (isTie ? pointsConfig.draw : pointsConfig.loss);
 
                 return (
-                  <div key={m.id} ref={el => matchCardRefs.current[m.id] = el} className="brutalist-border bg-black shadow-[8px_8px_0px_black] overflow-hidden text-black">
+                  <div key={m.id} ref={(el) => { matchCardRefs.current[m.id] = el; }} className="brutalist-border bg-black shadow-[8px_8px_0px_black] overflow-hidden text-black">
                     {/* Header bar as per image */}
                     <div className="bg-white p-4 flex justify-between items-center border-b-4 border-black">
                       <div>

@@ -5,6 +5,8 @@ import ManageTournamentList from './components/ManageTournamentList';
 import TournamentWorkspace from './components/TournamentWorkspace';
 import BrutalistButton from './components/BrutalistButton';
 
+const SITE_LOGO = "https://i.ibb.co/W4YnxfBP/file-00000000743071f488fdc3b85eadcd3d.png";
+
 const App: React.FC = () => {
   const [tournaments, setTournaments] = useState<Tournament[]>([]);
   const [activeView, setActiveView] = useState<AppView>('MAIN');
@@ -58,8 +60,8 @@ const App: React.FC = () => {
       {/* Global Header */}
       <header className="bg-white border-b-4 border-black p-4 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 z-50 sticky top-0 shadow-[0_4px_0px_black]">
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 bg-black flex items-center justify-center brutalist-border transform -rotate-3">
-             <span className="text-white font-black text-4xl">C</span>
+          <div className="w-16 h-16 bg-white flex items-center justify-center brutalist-border transform -rotate-3 overflow-hidden shadow-[4px_4px_0px_black]">
+             <img src={SITE_LOGO} className="w-12 h-12 object-contain" alt="CAD" />
           </div>
           <div>
             <h1 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none">
